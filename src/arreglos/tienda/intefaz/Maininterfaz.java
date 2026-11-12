@@ -75,12 +75,9 @@ public class Maininterfaz {
         System.out.println("*******Ingreso de datos********");
         String nombre = LeerString("Ingrese el nombre, no puede ser nullo ni blanco ");
         String categoria = LeerString("Ingrese la categoria, no puede ser nullo ni blanco ");
-        System.out.print("Ingrese el tamanio: ");
-        int tamanio = Integer.parseInt(sc.nextLine());
-        System.out.print("Ingrese el precio: ");
-        double precio = Double.parseDouble(sc.nextLine());
-        System.out.print("Ingrese el stock inicial: ");
-        int licenciasDisponibles = Integer.parseInt(sc.nextLine());
+        int tamanio = Validaciones.leerEnteroPositivo("Ingrese el tamanio:");
+        double precio = Validaciones.leerDoublePositivo("Ingrese el precio: ");
+        int licenciasDisponibles = Validaciones.leerEnteroPositivo("Ingrese el stock inicial:");
         if (tienda.agregarJuego(new Juego(nombre, categoria, tamanio, precio, licenciasDisponibles))) {
             JOptionPane.showMessageDialog(null, "Juego ingresado con exito");
         } else {
@@ -116,5 +113,7 @@ public class Maininterfaz {
             System.out.println("Vslor total: " + TotalVenta);
         }
     }
+
+
 
 }
