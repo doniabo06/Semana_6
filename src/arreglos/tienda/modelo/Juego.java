@@ -9,11 +9,12 @@ public class Juego {
     private int licenciaVendidas;
 
 
-    public Juego(double precio, int tamanio, String nombre, String categoria) {
+    public Juego(String nombre, String categoria, int tamanio, double precio, int licenciaDisponibles  ) {
         this.nombre = nombre;
         this.categoria = categoria;
         this.tamanio = tamanio;
         this.precio = precio;
+        this.licenciaDisponibles = licenciaDisponibles;
         licenciaVendidas = 0;
     }
 

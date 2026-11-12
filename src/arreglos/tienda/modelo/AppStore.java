@@ -11,6 +11,11 @@ public class AppStore {
         indice = -1;
     }
 
+    public void incializarDatos (){
+        agregarJuego(new Juego("FIFA02026", "Deportes", 10, 70,50));
+        agregarJuego(new Juego("Roblox", "Accion",60,75,60 ));
+    }
+
     public Juego[] getJuegos() {
         return juegos;
     }
@@ -47,5 +52,24 @@ public class AppStore {
         return 0.0;
     }
 
+    public  String juegoMasVendido (){
+        String nombre = " ";
+        int mayor;
+        if (indice >= 0 ){
+            nombre = juegos [0].getNombre();
+            mayor = juegos [0].getLicenciaDisponibles();
+            for (Juego j : juegos){
+                if (j != null) {
+                    if (j.getLicenciaVendidas() > mayor) {
+                        mayor = j.getLicenciaDisponibles();
+                        nombre = j.getNombre();
+                    }
+                } else {
+                    return nombre;
+                }
+            } return nombre;
+        }
+        return nombre;
+    }
 
 }
